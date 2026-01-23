@@ -1,0 +1,36 @@
+{
+    "name": "React + TS Lab",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "react-ts-dev",
+    "workspaceFolder": "/workspace",
+
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/common-utils:2": {
+        "installZsh": true,
+        "configureZshAsDefaultShell": true,
+        "installOpenssh": true,
+        "upgradePackages": true
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+
+    "customizations": {
+        "vscode": {
+        "settings": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "extensions": [
+            "dbaeumer.vscode-eslint",
+            "esbenp.prettier-vscode",
+            "dsznajder.es7-react-js-snippets",
+            "yoavbls.pretty-ts-errors",
+            "ms-vscode.vscode-typescript-next"
+        ]
+        }
+    },
+
+    "postCreateCommand": "npm install -g vite typescript tsx",
+    "remoteUser": "node"
+}

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  react-ts-dev:
+    image: mcr.microsoft.com/devcontainers/typescript-node:20
+    container_name: react_ts_lab
+    command: sleep infinity 
+    volumes:
+      - ..:/workspace:cached
+    working_dir: /workspace
+    ports:
+      # Rango de puertos para Apps Web (Next.js, CRA, etc.)
+      - "3000-3010:3000-3010"
+      # Rango de puertos para Vite (React Moderno)
+      - "5173-5183:5173-5183"
