@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+
 type AlertProps = {
   message: string;
   type: "info" | "warning" | "error";
@@ -6,17 +9,23 @@ type AlertProps = {
 
 const Alert = ({ message, type, showIcon = true }: AlertProps) => {
   // Construcción dinámica de la clase: "alert alert-error"
-  const cssClass = `alert alert-${type}`;
+  const [isVisible, setIsVisible] = useState(true);
 
+  const cssClass = `alert alert-${type}`;
+  
+  if(!isVisible) return null;
   return (
     <div className={cssClass}>
-      {showIcon && (
-        <span>
-          {type === "error" ? "🚨" : type === "warning" ? "⚠️" : "ℹ️"}
-        </span>
-      )}
+      <div>
+        {showIcon && <span className="mr-2">
+          {type === 'error' ? '🚨' : type === 'warning' ? '⚠️' : 'ℹ️'}
+        </span>}
+        <strong>{message}</strong>
+      </div>
 
-      <strong>{message}</strong>
+      <button className="btn btn-close" onClick={() => setIsVisible(false)}>
+        ✖
+      </button>
     </div>
   );
 };
