@@ -3,7 +3,7 @@ import Contador from './components/Contador';
 import ProductCard from './components/ProductCard';
 import UserProfile from './components/UserProfile';
 import Accordion from './components/Accordion';
-
+import Cronometro from './components/Cronometro';
 import Tab from './components/Tab';
 function App() {
    const tabData = [
@@ -56,6 +56,10 @@ function App() {
       <p>El estado es la memoria interna de un componente React.</p>
     </Accordion>
     <Tab items={tabData} />
+
+    
+    <hr />
+    <Cronometro pausado={false} />
     </>
   );
 }
