@@ -5,6 +5,11 @@ import UserProfile from './components/UserProfile';
 import Accordion from './components/Accordion';
 import Cronometro from './components/Cronometro';
 import Tab from './components/Tab';
+
+
+
+
+
 function App() {
    const tabData = [
     { id: '1', label: 'Inicio', content: 'Contenido principal...' },
@@ -59,8 +64,11 @@ function App() {
 
     
     <hr />
-    <Cronometro pausado={false} />
-    </>
+    <Cronometro pausado={true} />
+    
+    {/*<hr />
+    <Cronometro2 />
+    */}</>
   );
 }
 
