@@ -25,10 +25,10 @@ const Cronometro = ({ pausado }: Props) => {
       intervalID = setInterval(() => {
         if (decimas < 9) {
           setDecimas((prevDec) => prevDec + 1);
-        }else if(decimas == 9 && segundos < 59){
+        } else if (decimas == 9 && segundos < 59) {
           setDecimas(0);
           setSegundos((prevSeg) => prevSeg + 1);
-        }else if(decimas == 9 && segundos == 59){
+        } else if (decimas == 9 && segundos == 59) {
           setDecimas(0);
           setSegundos(0);
           setMinutos((prevMin) => prevMin + 1);
@@ -51,11 +51,11 @@ const Cronometro = ({ pausado }: Props) => {
         <span>{segundos > 9 ? segundos : `0${segundos}`}</span> :{" "}
         <span>{decimas > 9 ? decimas : `0${decimas}`}</span>
         <br />
-        <button onClick={ handleClickInicio}>
+        <button onClick={handleClickInicio}>
           {funcionando ? "Parar" : "Iniciar"}
         </button>
         <br />
-        <button onClick={ handleClickReseteo}>Resetear</button>
+        <button onClick={handleClickReseteo}>Resetear</button>
       </h3>
     </div>
   );
