@@ -7,7 +7,7 @@ import Cronometro from "./components/Cronometro";
 import Tab from "./components/Tab";
 import Timer from "./components/Timer";
 import { useState } from "react";
-import FocusInput from "./components/Focus";
+import VideoReproductor from "./components/VideoReproductor";
 
 function App() {
   const tabData = [
@@ -92,7 +92,8 @@ function App() {
 
       <hr />
       <br />
-      <FocusInput />
+      
+      <VideoReproductor src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"/>
     </>
   );
 }
