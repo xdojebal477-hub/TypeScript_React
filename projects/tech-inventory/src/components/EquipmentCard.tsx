@@ -1,23 +1,26 @@
-import type{ Equipment } from "../type";
+import type { Equipment } from "../type";
 
-export interface EquipmentCardProps{
-    data:Equipment;
-    onDelete:(id:string)=>void;
+export interface EquipmentCardProps {
+  data: Equipment;
+  onDelete: (id: string) => void;
 }
 
-export function EquipmentCard({data,onDelete}:EquipmentCardProps) {
-    const statusColor=
-    data.estado ==='disponible'?'green':
-    data.estado === 'averiado'? 'red':'orange';
+export function EquipmentCard({ data, onDelete }: EquipmentCardProps) {
+  const statusColor =
+    data.estado === "disponible"
+      ? "green"
+      : data.estado === "averiado"
+        ? "red"
+        : "orange";
 
-    return  (
-     <div
+  return (
+    <div
       style={{
-        border: "1px solid #ccc",
+        border: "1px solid #000000",
         padding: "10px",
         borderRadius: "8px",
         marginBottom: "10px",
-        backgroundColor: "white",
+        backgroundColor: "gray",
       }}
     >
       <h3>{data.nombre}</h3>
@@ -56,5 +59,4 @@ export function EquipmentCard({data,onDelete}:EquipmentCardProps) {
       </div>
     </div>
   );
-    
 }

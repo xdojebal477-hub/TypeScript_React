@@ -6,12 +6,13 @@ import { getFirestore } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD4biafYLR0AoMwJNSu7xcavVUMjwSlypc",
-  authDomain: "tech-inventory-e0d49.firebaseapp.com",
-  projectId: "tech-inventory-e0d49",
-  storageBucket: "tech-inventory-e0d49.firebasestorage.app",
-  messagingSenderId: "1022301143228",
-  appId: "1:1022301143228:web:93204c5b2d8b53fce290b9"
+  //TODO: QUITAR API KEY SIEMPRE ANTES DE PUSH
+  apiKey: "",
+  authDomain: "techinventory-b3404.firebaseapp.com",
+  projectId: "techinventory-b3404",
+  storageBucket: "techinventory-b3404.firebasestorage.app",
+  messagingSenderId: "932030502769",
+  appId: "1:932030502769:web:4c57c9ae431a0c3328c8d0"
 };
 
 // Initialize Firebase
