@@ -1,13 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore/lite";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
   //TODO: QUITAR API KEY SIEMPRE ANTES DE PUSH
-  apiKey: "",
+  apiKey: "AIzaSyDyORrxLVTIL7Dffupo-JZEt93fNDGws7I",
   authDomain: "techinventory-b3404.firebaseapp.com",
   projectId: "techinventory-b3404",
   storageBucket: "techinventory-b3404.firebasestorage.app",
