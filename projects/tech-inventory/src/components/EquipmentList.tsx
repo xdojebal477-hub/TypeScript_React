@@ -8,7 +8,7 @@ export interface EquipmentListProps {
 
 export function EquipmentList({ items, onDelete }: EquipmentListProps) {
   if (items.length === 0) {
-    <p>No hay equipos en el Inventario</p>;
+    return <p>No hay equipos en el Inventario</p>;
   }
 
   return (
