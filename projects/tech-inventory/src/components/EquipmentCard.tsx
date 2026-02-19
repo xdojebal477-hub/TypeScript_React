@@ -1,4 +1,4 @@
-import type { Equipment } from "../type";
+import type { Equipment } from "../types";
 
 export interface EquipmentCardProps {
   data: Equipment;

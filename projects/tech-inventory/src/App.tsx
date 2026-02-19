@@ -10,7 +10,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
-import type { Equipment } from "./type";
+import type { Equipment } from "./types";
 import { EquipmentForm } from "./components/EquipmentForm";
 function App() {
   const [equipment, setEquipment] = useState<Equipment[]>(mockData);
@@ -49,22 +49,20 @@ function App() {
       console.log(`Error al guarda en la BBDD: ${error}`);
       alert(`Erro al guardar`);
     }
-
-    
   };
   const handleDeleteEquipment = async (id: string) => {
-      if (!confirm("Seguro que quieres eliminar el equipo")) return;
-      try {
-        await deleteDoc(doc(db, "equipos", id));
+    if (!confirm("Seguro que quieres eliminar el equipo")) return;
+    try {
+      await deleteDoc(doc(db, "equipos", id));
 
-        const newList = equipment.filter((equipment) => equipment.id !== id);
+      const newList = equipment.filter((equipment) => equipment.id !== id);
 
-        setEquipment(newList);
-      } catch (error) {
-        console.log(`Error al eliminar en la BBDD: ${error}`);
-        alert(`Erro al eliminar`);
-      }
-    };
+      setEquipment(newList);
+    } catch (error) {
+      console.log(`Error al eliminar en la BBDD: ${error}`);
+      alert(`Erro al eliminar`);
+    }
+  };
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto" }}>
       <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
