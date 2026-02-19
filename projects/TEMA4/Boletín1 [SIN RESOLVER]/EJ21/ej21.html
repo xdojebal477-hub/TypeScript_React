@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 21</title>
+    <link rel="stylesheet" href="./ej21.css" class="css" />
+  </head>
+  <body>
+    <header>
+      <h1>🛒 JS TechStore</h1>
+      <p class="subtitle">Ejercicio de Persistencia con JSON.stringify()</p>
+    </header>
+
+    <div class="main-container">
+      <div class="products-grid">
+        <div class="product-card">
+          <h3>Monitor 24"</h3>
+          <span class="price">150€</span>
+          <button
+            class="add-btn"
+            onclick="addToCart({ id: 1, name: 'Monitor 24', price: 150 })"
+          >
+            Añadir al Carrito
+          </button>
+        </div>
+
+        <div class="product-card">
+          <h3>Teclado Mecánico</h3>
+          <span class="price">80€</span>
+          <button
+            class="add-btn"
+            onclick="addToCart({ id: 2, name: 'Teclado Mec.', price: 80 })"
+          >
+            Añadir al Carrito
+          </button>
+        </div>
+
+        <div class="product-card">
+          <h3>Ratón Gaming</h3>
+          <span class="price">45€</span>
+          <button
+            class="add-btn"
+            onclick="addToCart({ id: 3, name: 'Ratón Gaming', price: 45 })"
+          >
+            Añadir al Carrito
+          </button>
+        </div>
+
+        <div class="product-card">
+          <h3>Auriculares</h3>
+          <span class="price">60€</span>
+          <button
+            class="add-btn"
+            onclick="addToCart({ id: 4, name: 'Auriculares', price: 60 })"
+          >
+            Añadir al Carrito
+          </button>
+        </div>
+      </div>
+
+      <aside class="cart-section">
+        <div class="cart-header">
+          <h3>Tu Carrito</h3>
+          <span id="cart-counter" class="cart-count">0</span>
+        </div>
+
+        <ul id="cart-list">
+          <li style="color: #999; text-align: center">Carrito vacío</li>
+        </ul>
+
+        <button id="clear-btn">Vaciar Carrito 🗑️</button>
+      </aside>
+    </div>
+
+    <div class="debug-panel">
+      <span class="debug-title"
+        >🔍 Monitor de LocalStorage (Clave: 'shopping_cart'):</span
+      >
+      <div id="debug-content">null</div>
+    </div>
+    <script src="./ej21.js"></script>
+  </body>
+</html>

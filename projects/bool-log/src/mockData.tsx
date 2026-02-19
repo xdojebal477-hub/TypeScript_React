@@ -7,7 +7,8 @@ export const mockData: BookLog[] = [
     autor: "Miguel de Cervantes",
     estado: "disponible",
     numeroPaginas: 637,
-    fechaPrestamo: new Date(),
+    fechaPrestamo: "2025-01-01",
+    portadaUrl: "https://placehold.co/300x400/3498db/white?text=El+Quijote",
   },
   {
     id:"2",
@@ -15,6 +16,7 @@ export const mockData: BookLog[] = [
     autor: "Homero",
     estado: "prestado",
     numeroPaginas: 450,
-    fechaPrestamo: new Date(2026, 1, 20),
+    fechaPrestamo: "2026-02-20",
+    portadaUrl: "https://placehold.co/300x400/3498db/white?text=La+Odisea",
   },
 ];

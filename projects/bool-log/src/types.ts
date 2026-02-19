@@ -5,6 +5,6 @@ export interface BookLog {
   autor: string;
   estado: "disponible" | "prestado" | "retirado";
   numeroPaginas: number;
-  fechaPrestamo?: Date;
+  fechaPrestamo?: string;
   portadaUrl?: string; 
 }

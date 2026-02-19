@@ -1,0 +1,168 @@
+:root {
+  --primary: #2c3e50;
+  --accent: #e74c3c;
+  --light: #ecf0f1;
+  --dark: #2c3e50;
+  --success: #27ae60;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+h1 {
+  margin: 0;
+  color: var(--primary);
+}
+p.subtitle {
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+/* Layout Principal: Grid de 2 columnas */
+.main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Catálogo ancho, Carrito estrecho */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sección de Productos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s;
+  border: 1px solid #eee;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+.price {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15px;
+}
+
+button.add-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+button.add-btn:hover {
+  background-color: #34495e;
+}
+
+/* Sección del Carrito (Sticky) */
+.cart-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.cart-count {
+  background: var(--accent);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+#cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+}
+
+#cart-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+#clear-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#clear-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Panel de Debug (Didáctico) */
+.debug-panel {
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #2d2d2d;
+  color: #dcdcaa; /* Color estilo código */
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+.debug-title {
+  color: #569cd6;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}

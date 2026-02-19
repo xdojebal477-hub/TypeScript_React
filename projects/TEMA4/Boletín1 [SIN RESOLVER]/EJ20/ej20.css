@@ -1,0 +1,99 @@
+/* --- 1. Definición de Variables CSS (Paleta de Colores) --- */
+:root {
+  /* Colores para Modo Claro (Por defecto) */
+  --bg-color: #f4f6f8;
+  --text-color: #333333;
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --accent-color: #3498db;
+  --btn-bg: #333333;
+  --btn-text: #ffffff;
+}
+
+/* Colores para Modo Oscuro (Se activan con la clase .dark-mode) */
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --header-bg: #2d2d2d;
+  --card-bg: #2d2d2d;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --accent-color: #5dade2;
+  --btn-bg: #f4f6f8;
+  --btn-text: #1a1a1a;
+}
+
+/* --- 2. Estilos Generales y Transiciones --- */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  /* La transición hace que el cambio de color sea suave */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+header {
+  background-color: var(--header-bg);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px var(--card-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+/* Estilo del Botón */
+#theme-toggle {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: bold;
+  transition:
+    transform 0.1s,
+    background-color 0.3s;
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Contenedor Principal */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas de contenido */
+.card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--card-shadow);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card h3 {
+  margin-top: 0;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+  display: inline-block;
+}

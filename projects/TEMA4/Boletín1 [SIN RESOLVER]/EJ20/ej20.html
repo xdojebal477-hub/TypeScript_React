@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 20</title>
+    <link rel="stylesheet" href="./ej20.css" class="css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mi Panel de Usuario</h1>
+      <button id="theme-toggle">🌙 Modo Oscuro</button>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h3>Perfil</h3>
+        <p><strong>Nombre:</strong> Ana García</p>
+        <p><strong>Rol:</strong> Desarrolladora Frontend</p>
+        <p>
+          Este panel simula una interfaz real donde la preferencia visual es
+          importante.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Configuración</h3>
+        <p>Las preferencias se guardan localmente.</p>
+        <p>
+          Si recargas esta página, el navegador recordará si elegiste el tema
+          claro u oscuro gracias a <code>localStorage</code>.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Estadísticas</h3>
+        <p>Visitas hoy: 120</p>
+        <p>Proyectos activos: 3</p>
+      </div>
+    </div>
+    <script src="./ej20.js"></script>
+  </body>
+</html>
