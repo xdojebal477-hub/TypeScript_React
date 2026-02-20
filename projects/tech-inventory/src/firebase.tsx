@@ -7,7 +7,7 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   //TODO: QUITAR API KEY SIEMPRE ANTES DE PUSH
-  apiKey: "AIzaSyDyORrxLVTIL7Dffupo-JZEt93fNDGws7I",
+  apiKey: "",
   authDomain: "techinventory-b3404.firebaseapp.com",
   projectId: "techinventory-b3404",
   storageBucket: "techinventory-b3404.firebasestorage.app",

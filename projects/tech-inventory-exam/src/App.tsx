@@ -21,7 +21,7 @@ function App() {
       prev.map((item) =>
         item.id === id && item.quantity > 0
           ? { ...item, quantity: item.quantity - 1 }
-          : item,
+          : item
       ),
     );
   };
