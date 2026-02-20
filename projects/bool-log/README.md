@@ -25,7 +25,7 @@ BookLog es una herramienta de gestión de biblioteca personal que permite llevar
 
 ## Despliegue
 
-🔗 **URL en Vercel**: _pendiente_
+🔗 **URL en Vercel**: [https://booklog-tau.vercel.app](https://booklog-tau.vercel.app/)
 
 ## Desarrollo local
 
