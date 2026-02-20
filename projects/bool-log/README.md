@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# 📚 BookLog — Gestión de Biblioteca
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web SPA para gestionar una colección de libros. Permite añadir, visualizar y eliminar libros, con persistencia en la nube mediante Firebase Firestore.
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+BookLog es una herramienta de gestión de biblioteca personal que permite llevar un registro de libros con su título, autor, estado (disponible, prestado, retirado), número de páginas y portada. Los datos se almacenan en Firebase Firestore, por lo que están disponibles desde cualquier dispositivo.
 
-## React Compiler
+## Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **TypeScript** — Componentes tipados y estado reactivo
+- **Tailwind CSS v4** — Estilos utility-first con tema oscuro neón
+- **Heroicons** — Iconos SVG del equipo de Tailwind
+- **Firebase Firestore** — Base de datos NoSQL en la nube (CRUD)
+- **Vite** — Bundler ultrarrápido para desarrollo y producción
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ **Create** — Formulario para añadir nuevos libros
+- ✅ **Read** — Listado de libros en tarjetas responsive
+- ✅ **Delete** — Eliminación con confirmación
+- ✅ **Loading** — Spinner mientras se cargan los datos
+- ✅ **Feedback** — Mensajes de éxito y error
+- ✅ **Responsive** — Adaptado a móvil, tablet y escritorio
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Despliegue
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🔗 **URL en Vercel**: _pendiente_
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Desarrollo local
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```

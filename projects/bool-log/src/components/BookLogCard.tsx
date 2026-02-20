@@ -1,4 +1,11 @@
 import type { BookLog } from "../types";
+import {
+  TrashIcon,
+  CalendarDaysIcon,
+  CheckCircleIcon,
+  ArrowPathIcon,
+  ArchiveBoxXMarkIcon,
+} from "@heroicons/react/24/outline";
 
 export interface BookLogProps {
   data: BookLog;
@@ -6,63 +13,65 @@ export interface BookLogProps {
 }
 
 export function BookLogCard({ data, onDelete }: BookLogProps) {
-  const statusColor =
-    data.estado === "disponible"
-      ? "green"
-      : data.estado === "prestado"
-        ? "orange"
-        : "red";
-  const badgeColor = statusColor;
+  // Mapa de colores por estado — neon style
+  const statusStyles: Record<BookLog["estado"], string> = {
+    disponible:
+      "bg-emerald-500/15 text-emerald-400 border border-emerald-500/20",
+    prestado: "bg-blue-500/15 text-blue-400 border border-blue-500/20",
+    retirado: "bg-rose-500/15 text-rose-400 border border-rose-500/20",
+  };
+
+  const statusIcon: Record<BookLog["estado"], React.ReactNode> = {
+    disponible: <CheckCircleIcon className="w-3.5 h-3.5" />,
+    prestado: <ArrowPathIcon className="w-3.5 h-3.5" />,
+    retirado: <ArchiveBoxXMarkIcon className="w-3.5 h-3.5" />,
+  };
 
   return (
-    <div
-      className="card"
-      style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-    >
+    <div className="glass rounded-xl neon-border overflow-hidden flex flex-col transition-all duration-300">
+      {/* Portada */}
       <img
-        src={data.portadaUrl}
+        src={
+          data.portadaUrl ||
+          `https://placehold.co/300x400/1e1b4b/a78bfa?text=${encodeURIComponent(data.titulo)}`
+        }
         alt={`Portada de ${data.titulo}`}
-        className="card-img"
-        style={{ height: "200px", objectFit: "cover" }}
+        className="w-full h-48 object-cover"
       />
 
-      <div className="card-body">
-        <h3 style={{ margin: "0 0 5px 0", fontSize: "1.1rem" }}>
+      {/* Contenido */}
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="text-base font-semibold text-slate-100 leading-tight mb-1 line-clamp-2">
           {data.titulo}
         </h3>
-        <p style={{ margin: 0, color: "#666", fontSize: "0.9rem" }}>
-          {data.autor}
-        </p>
+        <p className="text-sm text-slate-400 mb-3">{data.autor}</p>
 
-        <div
-          style={{
-            marginTop: "10px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+        {/* Badge de estado + páginas */}
+        <div className="flex items-center justify-between mt-auto mb-3">
           <span
-            style={{
-              backgroundColor: badgeColor,
-              color: "white",
-              padding: "4px 8px",
-              borderRadius: "12px",
-              fontSize: "0.8rem",
-              textTransform: "capitalize",
-            }}
+            className={`text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1 ${statusStyles[data.estado]}`}
           >
-            {data.estado}
+            {statusIcon[data.estado]} {data.estado}
           </span>
-          <small style={{ color: "#999" }}>{data.numeroPaginas} págs.</small>
+          <span className="text-xs text-slate-500">
+            {data.numeroPaginas} págs.
+          </span>
         </div>
 
-        {/* Ahora el botón SÍ hace algo: llama a onDelete con el id del libro */}
+        {/* Fecha de préstamo si existe */}
+        {data.fechaPrestamo && (
+          <p className="text-xs text-slate-500 mb-3 flex items-center gap-1">
+            <CalendarDaysIcon className="w-3.5 h-3.5" />
+            {new Date(data.fechaPrestamo).toLocaleDateString("es-ES")}
+          </p>
+        )}
+
+        {/* Botón eliminar */}
         <button
-          className="btn btn-danger"
-          style={{ marginTop: "15px" }}
           onClick={() => onDelete(data.id)}
+          className="w-full py-2 text-sm font-medium text-rose-400 bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-1.5"
         >
+          <TrashIcon className="w-4 h-4" />
           Eliminar
         </button>
       </div>
